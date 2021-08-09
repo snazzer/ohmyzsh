@@ -52,8 +52,9 @@ EOF
 fi
 
 if [[ $FOUND_PYENV -eq 1 ]]; then
-  eval "$(pyenv init - --no-rehash zsh)"
-
+  eval "$(pyenv init --path)"
+  #eval "$(pyenv init - --no-rehash zsh)"
+  
   if (( ${+commands[pyenv-virtualenv-init]} )); then
     eval "$(pyenv virtualenv-init - zsh)"
   fi
